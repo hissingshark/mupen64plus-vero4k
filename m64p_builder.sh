@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# *************************************************
+# Script to build Mupen64Plus on the OSMC Vero 4K
+# HissingShark 2017 -
+# *************************************************
+
 # stop Kodi to free up resources
 sudo systemctl stop mediacenter
 
