@@ -60,3 +60,9 @@ sed -i 's/"$MAKE" -C/"$MAKE" -j4 -C/' m64p_build.sh
 # set useful Mupen64Plus specific flags and build it 
 export HOST_CPU=armv8 USE_GLES=1 NEON=1
 ./m64p_build.sh
+
+# copy the ALSA config into the home directory, albeit hidden for now
+cp .asoundrc ~/.asoundrc.hidden
+
+# restart Kodi - it's like nothing happened...
+sudo systemctl start mediacenter
