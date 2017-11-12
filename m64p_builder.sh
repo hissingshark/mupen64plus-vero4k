@@ -41,6 +41,7 @@ git clone https://github.com/mupen64plus/mupen64plus-core.git
 cp mupen64plus-core/tools/m64p_helper_scripts.tar.gz ..
 cd ..
 tar xvf m64p_helper_scripts.tar.gz
+rm m64p_helper_scripts.tar.gz
 ./m64p_get.sh
 
 # pull additional video plugin
@@ -49,6 +50,12 @@ git clone https://github.com/ricrpi/mupen64plus-video-gles2n64.git
 cd ..
 # add the plugin to the list of jobs in the build tool
 sed -i 's/video-glide64mk2/video-glide64mk2 video-gles2n64/' m64p_build.sh
+
+# rename the output direct directory to something sexier
+sed -i 's/\/test\//\/emulator\//g' m64p_build.sh
+
+# multithread the builds because we haven't got all day
+sed -i 's/"$MAKE" -C/"$MAKE" -j4 -C/' m64p_build.sh
 
 # set useful Mupen64Plus specific flags and build it 
 export HOST_CPU=armv8 USE_GLES=1 NEON=1
