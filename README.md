@@ -33,6 +33,7 @@ cd
 git clone https://github.com/hissingshark/mupen64plus-vero4k.git
 cd mupen64plus-vero4k
 ./m64p_builder.sh```
+
 Kodi will stop whilst the build goes on and return when it’s finished (<15mins).
 
 ## Usage instructions
@@ -41,11 +42,13 @@ Kodi will stop whilst the build goes on and return when it’s finished (<15mins
 cd
 sudo systemctl stop mediacenter
 mv .asoundrc.hidden .asoundrc```
+
 Launch the emulator:
 ```
 cd
 cd mupen64plus/emulator/
 ./mupen64plus --gfx <name-of-video-plugin> <path-to-rom>```
+
 Note - wishing to avoid the obvious error but that means you’ll need to insert you own choice of video plugin and the path to your own choice of game ROM, wherever you may be keeping it. e.g:
 ```./mupen64plus --gfx mupen64plus-video-rice ~/myroms/SpaceInvaders.n64```
 
@@ -55,6 +58,7 @@ Stop the emulator with ctrl-c in the terminal, or from the hotkey you’ve assig
 cd
 mv .asoundrc .asoundrc.hidden
 sudo systemctl stop mediacenter```
+
 That’s about it!
 I’m trusting you to add your controller config to
  ```~/mupen64plus/emulator/InputAutoCfg.ini```
