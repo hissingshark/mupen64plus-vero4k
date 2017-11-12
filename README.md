@@ -2,6 +2,7 @@
 
 ## mupen64plus-vero4k
 Automated building of the N64 emulator Mupen64Plus for the OSMC device Vero 4k.
+This would not have been possible without the addition of mali-fbdev support by @mihailescu2m THANK YOU
 
 Retropie on the RPi3 is brilliant.  
 RetrOSMC on the RPi3 is brilliant++  
