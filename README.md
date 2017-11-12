@@ -81,8 +81,9 @@ video stretch=1
 ```
 
 That aside, configuration is largely beyond the scope of this HowTo.
-Google and YouTube are your friends.
+Google and YouTube are your friends.  
 https://mupen64plus.org/docs/
+
 https://retropie.org.uk/docs/
 
 I wish you joy!
