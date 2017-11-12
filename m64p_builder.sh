@@ -62,7 +62,9 @@ export HOST_CPU=armv8 USE_GLES=1 NEON=1
 ./m64p_build.sh
 
 # copy the ALSA config into the home directory, albeit hidden for now
-cp .asoundrc ~/.asoundrc.hidden
+cd ~/mupen64plus-vero4k
+cp asound.conf ~/.asoundrc.hidden
 
 # restart Kodi - it's like nothing happened...
+cd
 sudo systemctl start mediacenter
