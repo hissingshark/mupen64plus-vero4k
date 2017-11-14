@@ -17,18 +17,18 @@ export CFLAGS="-I/opt/vero3/include -L/opt/vero3/lib -O3 -march=armv8-a+crc -mtu
 export CPPFLAGS=$CFLAGS
 export CXXFLAGS=$CFLAGS
 
-# install specific packages for building  SDL2
-sudo apt-get install -y libasound2-dev libdbus-1-dev
-
-# pull a fork of SDL2 v.2.0.2 that includes MALI-fbdev support
-cd
-git clone https://github.com/mihailescu2m/libsdl2-2.0.2-dfsg1.git
-
-# build/install SDL2 - a major dependancy of the project
-cd libsdl2-2.0.2-dfsg1
-./configure --enable-video-directfb
-sudo make -j4
-sudo make install
+echo -n "Checking for SDL2... "
+# if sdl2 missing we need to build it first
+if [ "$(sdl2-config 2> >(grep 'command not found'))" = "" ];
+then
+  echo OK
+else
+  echo -n BUILDING... 
+	cd
+	git clone https://github.com/hissingshark/sdl2-vero4k.git
+	cd sdl2-vero4k
+	./sdl2_build.sh
+fi
 
 # install specific packages for building Mupen64Plus and the additional video plugin "mupen64plus-video-gles2n64"
 sudo apt-get install -y libpng12-dev libboost-all-dev
