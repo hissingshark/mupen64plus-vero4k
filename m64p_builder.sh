@@ -62,6 +62,14 @@ sed -i 's/\/test\//\/emulator\//g' m64p_build.sh
 # multithread the builds because we haven't got all day
 sed -i 's/"$MAKE" -C/"$MAKE" -j4 -C/' m64p_build.sh
 
+# EASTER EGG
+# code the buttons assigned to volume up/down on the keypad (never used) to change emulator speed in 30% jumps
+# good for teaching a 4 year-old to steer without a miniture controller - HOW ELSE WILL THEY LEARN?!
+cd source/mupen64plus-core/src/main
+sed -i '/else if (cmd == joyDecrease)/!b;n;cmain_speeddown(30);' eventloop.c
+sed -i '/else if (cmd == joyIncrease)/!b;n;cmain_speedup(30);' eventloop.c
+cd ../../../..
+
 # set useful Mupen64Plus specific flags and build it 
 export HOST_CPU=armv8 USE_GLES=1 NEON=1
 ./m64p_build.sh
