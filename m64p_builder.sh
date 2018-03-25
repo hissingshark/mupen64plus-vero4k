@@ -31,7 +31,7 @@ else
 fi
 
 # install specific packages for building Mupen64Plus and the additional video plugin "mupen64plus-video-gles2n64"
-sudo apt-get install -y libpng12-dev libboost-all-dev
+sudo apt-get install -y libpng-dev libboost-all-dev
 
 # setup a workspace to build the emulator
 cd
